@@ -1,0 +1,7 @@
+git config --global user.name amandabordotti
+git config --global user.email amandabordotti12@gmail.com
+
+npx create-expo-app@latest calculadora --template blank
+cd calculadora
+
+npx expo start --android
