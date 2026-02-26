@@ -10,12 +10,12 @@ export default function App() {
   const [mode, setMode] = useState("dark");
   const theme = themes[mode];
 
-return (
+  return (
     <View style={[styles.container, {backgroundColor: theme.bg}]}>
-      <StatusBar barStyle={mode === "dark" ? "light-content" : "dark-content" } />
+      <StatusBar barStyle={mode === "dark" ? "light-content" : "dark-content"} />
 
       <View style={styles.topBar}>
-        <Pressable 
+        <Pressable
           onPress={() => setMode((m) => (m === "dark" ? "light" : "dark"))}
           style={({pressed}) => [
             styles.toggle,
@@ -32,7 +32,7 @@ return (
         </Pressable>
       </View>
 
-      <Display 
+      <Display
         theme={theme}
         expression={"100+"}
         value={0}
@@ -72,11 +72,10 @@ const styles = StyleSheet.create({
   },
   pad: {
     gap: 14,
-    paddingBottom: 18
+    paddingBottom: 18,
   },
   row: {
     flexDirection: 'row',
     gap: 14,
   }
-
 });
