@@ -7,7 +7,7 @@ export default function CalcButton({ theme, label, onPress, variant="num", wide=
   const fg = isOp ? theme.opText : theme.keyText;
 
   return (
-    <View style={[styles.outer, wide && { flex: 2}]}>
+    <View style={[styles.outer, wide && { flex: 2 }]}>
       <Pressable
         onPress={onPress}
         style={({ pressed }) => [
@@ -17,7 +17,7 @@ export default function CalcButton({ theme, label, onPress, variant="num", wide=
             borderColor: theme.stroke,
             transform: [{ translateY: pressed ? 1.5 : 0 }],
           },
-          // neumorph(theme, pressed),
+          neumorph(theme, pressed),
         ]}
       >
         <Text style={[styles.text, { color: fg }]}>{label}</Text>
@@ -28,19 +28,19 @@ export default function CalcButton({ theme, label, onPress, variant="num", wide=
 
 function neumorph(theme, pressed) {
   const lift = pressed ? 6 : 10;
-  const darkOpacity = pressed ? 0.28 : 0.28;
+  const darkOpacity = pressed ? 0.18 : 0.28;
 
   return {
     shadowColor: theme.shadowDark,
     shadowOpacity: darkOpacity,
     shadowRadius: lift,
-    shadowOffset: { width:  0, height: lift * 0.7},
+    shadowOffset: { width: 0, height: lift * 0.7 },
     elevation: pressed ? 3 : 6,
   }
 }
 
 const styles = StyleSheet.create({
-  outer : { flex: 1},
+  outer: { flex: 1 },
   btn: {
     height: 74,
     borderRadius: 18,
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  tetx: {
+  text: {
     fontSize: 22,
     fontWeight: '700',
   }
